@@ -16,7 +16,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -110,6 +109,25 @@ public class ProductController {
 		}
 
 		return mapProducts;
+	}
+
+	// trier les Produits Par Ordre Alphabetique
+
+	@GetMapping(value = "/TrierProduits")
+	public MappingJacksonValue trierProduitsParOrdreAlphabetique() {
+
+		Iterable<Product> produits = productDao.findByOrderByNomAsc();
+
+		SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat");
+
+		FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
+
+		MappingJacksonValue produitsFiltres = new MappingJacksonValue(produits);
+
+		produitsFiltres.setFilters(listDeNosFiltres);
+
+		return produitsFiltres;
+
 	}
 
 }
