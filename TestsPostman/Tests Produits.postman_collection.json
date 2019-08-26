@@ -1,0 +1,369 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Tests Produits",
+		"_postman_id": "81db448b-b850-9dc2-9514-688d645876ad",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Trier Par Ordre Alphabetique",
+			"request": {
+				"url": "http://localhost:9090/TrierProduits",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "da33777e-565a-416c-aa49-9b713ac92dac",
+					"name": "Trier Par Ordre Alphabetique",
+					"originalRequest": {
+						"url": "http://localhost:9090/TrierProduits",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Mon, 26 Aug 2019 11:17:27 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"responseTime": 112,
+					"body": "[{\"id\":2,\"nom\":\"Aspirateur Robot\",\"prix\":500},{\"id\":1,\"nom\":\"Ordinateur portable\",\"prix\":350},{\"id\":3,\"nom\":\"Table de Ping Pong\",\"prix\":750}]"
+				}
+			]
+		},
+		{
+			"name": "calculer la marge",
+			"request": {
+				"url": "http://localhost:9090/AdminProduits",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "0beaa379-e175-4b9f-b0e9-9e2d74588725",
+					"name": "calculer la marge",
+					"originalRequest": {
+						"url": "http://localhost:9090/AdminProduits",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Mon, 26 Aug 2019 12:53:45 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"responseTime": 83,
+					"body": "{\"Product{id=2, nom='Aspirateur Robot', prix=500}\":300,\"Product{id=1, nom='Ordinateur portable', prix=350}\":230,\"Product{id=3, nom='Table de Ping Pong', prix=750}\":350}"
+				}
+			]
+		},
+		{
+			"name": "ajouter produit",
+			"request": {
+				"url": "http://localhost:9090/Produits",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n        \"nom\": \"TELE\",\n        \"prix\": \"255\",\n        \"prixAchat\":\"240\"\n    }"
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "a95fe287-d721-46e7-8208-2d28693f9baa",
+					"name": "ajouter produit",
+					"originalRequest": {
+						"url": "http://localhost:9090/Produits",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n        \"nom\": \"TELE\",\n        \"prix\": \"256\",\n        \"prixAchat\":\"240\"\n    }"
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plainText",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "0",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Mon, 26 Aug 2019 12:59:05 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "location",
+							"key": "location",
+							"value": "http://localhost:9090/Produits/5",
+							"description": "Used in redirection, or when a new resource has been created."
+						}
+					],
+					"cookie": [],
+					"responseTime": 94,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "ajouter produit exception",
+			"request": {
+				"url": "http://localhost:9090/Produits",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n        \"nom\": \"TELE\",\n        \"prix\": \"0\",\n        \"prixAchat\":\"240\"\n    }"
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "8062c7c2-e128-46b4-a839-3bfc5ed9f55c",
+					"name": "ajouter produit exception",
+					"originalRequest": {
+						"url": "http://localhost:9090/Produits",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n        \"nom\": \"TELE\",\n        \"prix\": \"0\",\n        \"prixAchat\":\"240\"\n    }"
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "close",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Mon, 26 Aug 2019 12:59:48 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"responseTime": 67,
+					"body": "{\"timestamp\":1566824388674,\"status\":400,\"error\":\"Bad Request\",\"exception\":\"com.ecommerce.microcommerce.web.exceptions.ProduitGratuitException\",\"message\":\"Le prix de produit ne doit pas être égal à 0\",\"path\":\"/Produits\"}"
+				},
+				{
+					"id": "49d78276-c95b-41d4-ba42-5630bb7066f2",
+					"name": "ajouter produit exception",
+					"originalRequest": {
+						"url": "http://localhost:9090/Produits",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n        \"nom\": \"TELE\",\n        \"prix\": \"0\",\n        \"prixAchat\":\"240\"\n    }"
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "close",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Mon, 26 Aug 2019 12:59:48 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"responseTime": 67,
+					"body": "{\"timestamp\":1566824388674,\"status\":400,\"error\":\"Bad Request\",\"exception\":\"com.ecommerce.microcommerce.web.exceptions.ProduitGratuitException\",\"message\":\"Le prix de produit ne doit pas être égal à 0\",\"path\":\"/Produits\"}"
+				},
+				{
+					"id": "505c76bf-ab2e-415c-9699-b3c3159c4973",
+					"name": "ajouter produit exception",
+					"originalRequest": {
+						"url": "http://localhost:9090/Produits",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n        \"nom\": \"TELE\",\n        \"prix\": \"0\",\n        \"prixAchat\":\"240\"\n    }"
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "close",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Mon, 26 Aug 2019 13:04:08 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"responseTime": 100,
+					"body": "{\"timestamp\":1566824648044,\"status\":400,\"error\":\"Bad Request\",\"exception\":\"com.ecommerce.microcommerce.web.exceptions.ProduitGratuitException\",\"message\":\"Le prix de produit ne doit pas être égal à 0\",\"path\":\"/Produits\"}"
+				}
+			]
+		}
+	]
+}
